@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_Submit</title>
+    <style>
+      #submit {
+        width: 100%;
+        margin-top: 20px;
+        background-color: rgb(66, 239, 97);
+        color: white;
+        border: none;
+        border-radius: 15px;
+      }
+      form {
+        width: 500px;
+        border: 5px solid rgb(230, 230, 230);
+        margin: 5% auto;
+        padding: 5%;
+        background: white;
+        text-align: center;
+      }
+      h1 {
+        color: blue;
+        text-decoration: underline;
+        padding: 10px;
+        text-transform: uppercase;
+      }
+      input,
+      select {
+        display: block;
+        margin: 15px 0px;
+        font-size: 20px;
+        padding: 2%;
+        background-color: rgb(155, 201, 253);
+        border: none;
+        border-radius: 10px;
+        border-bottom: 2px solid rgb(216, 216, 216);
+      }
+    </style>
+</head>
+<body>
+    <div>
+        <form id="form">
+            <h1>Form Submit with Basic DOM</h1>
+            <input placeholder="Enter Name" id="name" type="text" />
+            <input placeholder="Age" type="number" id="age" />
+            <select id="gender">
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="cantsay">Nothing Can be said</option>
+            </select>
+            <input placeholder="Enter Email" type="email" id="email" />
+            <input placeholder="Enter Mobile Number" type="number" id="mobnum" />
+            <input id="submit" type="submit" value="Submit" />
+          </form>
+    </div>
+</body>
+</html>
+
+<script> 
+  document.querySelector("form").addEventListener("submit",form_submit);
+  let getDeatils=[];
+
+  function form_submit(event){
+    event.preventDefault();
+
+    let formSubmit = {
+      Name:document.querySelector("#name").value,
+      Age:document.querySelector("#age").value,
+      Gender:document.querySelector("#gender").value,
+      Email:document.querySelector("#email").value,
+      Mobile:document.querySelector("#mobnum").value,
+    }
+
+    getDeatils.push(formSubmit);
+    console.log(getDeatils);
+  }
+</script>
