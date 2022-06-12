@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: bisque;
+        }
+        div {
+            background-color: white;
+            width: 60%;
+            margin: auto;
+            padding: 10%;
+        }
+        input,button{
+            width: 100%;
+            font-size: 20px;
+            display: block;
+            margin-top: 5px;
+            border-radius: 9px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <input placeholder="Enter your Name" 
+            id="name" type="text">
+            <input placeholder="Enter your E-Mail" 
+            id="email" type="email">
+            <input placeholder="Enter your password" 
+            id="password" type="password">
+            <button id="signup">Sign-Up</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    let form = document.querySelector("form")
+    
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let data={
+            name:form.name.value,
+            email:form.email.value,
+            password:form.password.value,
+        }
+        console.log(data);
+    })
+
+</script>
+
+</html>
